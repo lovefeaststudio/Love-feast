@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Love Feast — a playful online matchmaking party game.">
+  <title>Love Feast 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true"></div>
+
+  <main class="app">
+    <section id="home" class="screen active">
+      <div class="logo-mark">💌</div>
+      <p class="eyebrow">WELCOME TO</p>
+      <h1>LOVE <span>FEAST</span></h1>
+      <p class="tagline">Come for the game. Stay for the drama.</p>
+
+      <div class="hero-card">
+        <div class="island">🌴</div>
+        <p>Match. Choose. Secretly admire. Recouple.</p>
+        <small>A playful group game for friends.</small>
+      </div>
+
+      <div class="actions">
+        <button class="primary" id="hostBtn">👑 Host a Feast</button>
+        <button class="secondary" id="joinBtn">🎟️ Join a Feast</button>
+      </div>
+
+      <p class="tiny">No account needed for this first version.</p>
+    </section>
+
+    <section id="host" class="screen">
+      <button class="back" data-back>← Back</button>
+      <p class="eyebrow">HOST MODE</p>
+      <h2>Create your Feast</h2>
+      <p class="muted">Give your game a name and become the person in charge of the chaos.</p>
+
+      <label for="hostName">Your name</label>
+      <input id="hostName" maxlength="24" placeholder="e.g. Cindy" autocomplete="off">
+
+      <label for="feastName">Feast name</label>
+      <input id="feastName" maxlength="32" placeholder="e.g. Friday Night Chaos" autocomplete="off">
+
+      <button class="primary full" id="createBtn">Create Feast ✨</button>
+
+      <div id="created" class="result hidden">
+        <p class="eyebrow">YOUR FEAST CODE</p>
+        <div class="code" id="roomCode">FEAST-0000</div>
+        <p>Send this code to your group chat.</p>
+        <button class="secondary full" id="copyBtn">📋 Copy Code</button>
+        <button class="primary full" id="enterLobbyBtn">Enter Lobby →</button>
+      </div>
+    </section>
+
+    <section id="join" class="screen">
+      <button class="back" data-back>← Back</button>
+      <p class="eyebrow">PLAYER MODE</p>
+      <h2>Join a Feast</h2>
+      <p class="muted">Enter the code your host sent you.</p>
+
+      <label for="playerName">Your name</label>
+      <input id="playerName" maxlength="24" placeholder="Choose a nickname" autocomplete="off">
+
+      <label for="joinCode">Feast code</label>
+      <input id="joinCode" maxlength="10" placeholder="FEAST-1234" autocomplete="off">
+
+      <button class="primary full" id="joinFeastBtn">Join the Feast 💘</button>
+    </section>
+
+    <section id="lobby" class="screen">
+      <p class="eyebrow">THE FEAST IS OPEN</p>
+      <div class="mini-logo">🌴</div>
+      <h2 id="lobbyTitle">Friday Night Chaos</h2>
+      <p class="muted">Room code</p>
+      <div class="code small-code" id="lobbyCode">FEAST-0000</div>
+
+      <div class="players-card">
+        <div class="players-heading">
+          <span>Players</span>
+          <span id="playerCount">1</span>
+        </div>
+        <div id="playerList" class="player-list"></div>
+      </div>
+
+      <button class="primary full" id="startDemoBtn">Start First Impression 💘</button>
+      <p class="tiny">Demo mode: this version stores the room only in this browser.</p>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="progress"><span id="progressBar"></span></div>
+      <p class="eyebrow">ROUND 1 · FIRST IMPRESSIONS</p>
+      <h2>Who catches your attention?</h2>
+      <p class="muted">Pick the profile that gives you the best first impression.</p>
+
+      <div id="profileGrid" class="profile-grid"></div>
+
+      <button class="primary full hidden" id="finishBtn">Lock in my choice 💌</button>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="confetti">✨💌✨</div>
+      <p class="eyebrow">FIRST IMPRESSION LOCKED</p>
+      <h2>Ooooh… interesting. 👀</h2>
+      <p id="resultText" class="result-text"></p>
+
+      <div class="score-card">
+        <span>Current status</span>
+        <strong>THE FEAST HAS BEGUN 🌴</strong>
+        <small>More rounds coming next: secret admirers, challenges, recoupling and the final reveal.</small>
+      </div>
+
+      <button class="primary full" id="homeBtn">Back to Home</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
